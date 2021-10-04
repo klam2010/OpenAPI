@@ -56,12 +56,12 @@
             "requestBody":{
                "description":"Update an existent pet in the store",
                "content":{
-                  "application/json":{
+                  "application/xml":{
                      "schema":{
                         "$ref":"#/components/schemas/Pet"
                      }
                   },
-                  "application/xml":{
+                  "application/json":{
                      "schema":{
                         "$ref":"#/components/schemas/Pet"
                      }
