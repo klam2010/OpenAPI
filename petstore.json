@@ -55,13 +55,12 @@
             "operationId":"updatePet",
             "requestBody":{
                "description":"Update an existent pet in the store",
-               "content":
+               "content":{
                   "application/xml":{
                      "schema":{
                         "$ref":"#/components/schemas/Pet"
                      }
                   },
-		  {
                   "application/json":{
                      "schema":{
                         "$ref":"#/components/schemas/Pet"
