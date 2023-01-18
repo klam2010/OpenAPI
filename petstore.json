@@ -174,7 +174,7 @@
             ],
             "summary":"Add a new pet to the store",
             "description":"Add a new pet to the store",
-            "operationId":"addPet",
+            "operationId":"addPetReference",
             "requestBody":{
                "description":"Create a new pet in the store",
                "$ref":"#/components/schemas/Pet",
