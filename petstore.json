@@ -223,7 +223,7 @@
             "operationId":"addPetReference",
             "requestBody":{
                "description":"Create a new pet in the store",
-               "$ref":"#/components/schemas/Pet",
+               "$ref":"#/components/requestBodies/Pet",
                "required":true
             },
             "responses":{
