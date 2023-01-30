@@ -188,14 +188,7 @@
             },
             "responses":{
                "200":{
-                  "description":"Successful operation",
-                  "content":{
-                     "text/plain":{
-                        "schema":{
-                           "type":"string"
-                        }
-                     }
-                  }
+                  "description":"Successful operation"
                },
                "405":{
                   "description":"Invalid input"
