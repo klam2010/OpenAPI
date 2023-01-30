@@ -167,14 +167,14 @@
             ]
          }
       },
-       "/petSimpleStringSchemaRequest":{
+       "/petSimpleStringSchema":{
          "post":{
             "tags":[
                "pet"
             ],
             "summary":"Add a new pet to the store",
             "description":"Add a new pet to the store",
-            "operationId":"petSimpleStringSchemaRequest",
+            "operationId":"petSimpleStringSchema",
             "requestBody":{
                "description":"Create a new pet in the store",
                "content":{
@@ -188,13 +188,12 @@
             },
             "responses":{
                "200":{
-                  "description":"Successful operation",
+                  "description":"Successful operation"
                },
                "405":{
                   "description":"Invalid input"
                }
-            }
-            ,
+            },
             "security":[
                {
                   "petstore_auth":[
@@ -205,14 +204,14 @@
             ]
          }
       },
-      "/petSimpleNumberSchemaRequest":{
+      "/petSimpleNumberSchema":{
          "post":{
             "tags":[
                "pet"
             ],
             "summary":"Add a new pet to the store",
             "description":"Add a new pet to the store",
-            "operationId":"petSimpleNumberSchemaRequest",
+            "operationId":"petSimpleNumberSchema",
             "requestBody":{
                "description":"Create a new pet in the store",
                "content":{
@@ -224,10 +223,9 @@
                },
                "required":true
             },
-            
             "responses":{
                "200":{
-                  "description":"Successful operation",
+                  "description":"Successful operation"
                },
                "405":{
                   "description":"Invalid input"
@@ -243,6 +241,8 @@
             ]
          }
       },
+      
+      
       "/petReferenceBody":{
          "post":{
             "tags":[
