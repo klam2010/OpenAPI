@@ -186,6 +186,14 @@
                },
                "required":true
             },
+            "responses":{
+               "200":{
+                  "description":"Successful operation",
+               },
+               "405":{
+                  "description":"Invalid input"
+               }
+            }
             ,
             "security":[
                {
@@ -216,7 +224,15 @@
                },
                "required":true
             },
-            ,
+            
+            "responses":{
+               "200":{
+                  "description":"Successful operation",
+               },
+               "405":{
+                  "description":"Invalid input"
+               }
+            },
             "security":[
                {
                   "petstore_auth":[
@@ -227,8 +243,6 @@
             ]
          }
       },
-      
-      
       "/petReferenceBody":{
          "post":{
             "tags":[
