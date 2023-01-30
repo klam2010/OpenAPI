@@ -167,14 +167,14 @@
             ]
          }
       },
-       "/petSimpleStringSchema":{
+       "/petSimpleStringSchemaRequest":{
          "post":{
             "tags":[
                "pet"
             ],
             "summary":"Add a new pet to the store",
             "description":"Add a new pet to the store",
-            "operationId":"addPetSimpleType",
+            "operationId":"petSimpleStringSchemaRequest",
             "requestBody":{
                "description":"Create a new pet in the store",
                "content":{
@@ -186,21 +186,37 @@
                },
                "required":true
             },
-            "responses":{
-               "200":{
-                  "description":"Successful operation",
-                  "content":{
-                     "text/plain":{
-                        "schema":{
-                           "type":"string"
-                        }
+            ,
+            "security":[
+               {
+                  "petstore_auth":[
+                     "write:pets",
+                     "read:pets"
+                  ]
+               }
+            ]
+         }
+      },
+      "/petSimpleNumberSchemaRequest":{
+         "post":{
+            "tags":[
+               "pet"
+            ],
+            "summary":"Add a new pet to the store",
+            "description":"Add a new pet to the store",
+            "operationId":"petSimpleNumberSchemaRequest",
+            "requestBody":{
+               "description":"Create a new pet in the store",
+               "content":{
+                  "text/plain":{
+                     "schema":{
+                        "type":"number"
                      }
                   }
                },
-               "405":{
-                  "description":"Invalid input"
-               }
+               "required":true
             },
+            ,
             "security":[
                {
                   "petstore_auth":[
