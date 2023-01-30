@@ -204,7 +204,44 @@
             ]
          }
       },
-      
+ 
+      "/petSimpleNumberSchema":{
+         "post":{
+            "tags":[
+               "pet"
+            ],
+            "summary":"Add a new pet to the store",
+            "description":"Add a new pet to the store",
+            "operationId":"addPetNumbereType",
+            "requestBody":{
+               "description":"Create a new pet in the store",
+               "content":{
+                  "text/plain":{
+                     "schema":{
+                        "type":"number"
+                     }
+                  }
+               },
+               "required":true
+            },
+            "responses":{
+               "200":{
+                  "description":"Successful operation"
+               },
+               "405":{
+                  "description":"Invalid input"
+               }
+            },
+            "security":[
+               {
+                  "petstore_auth":[
+                     "write:pets",
+                     "read:pets"
+                  ]
+               }
+            ]
+         }
+      },
       
       "/petReferenceBody":{
          "post":{
