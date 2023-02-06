@@ -1016,6 +1016,74 @@
             }
          }
       },
+      "/getSimple":{
+         "get":{
+            "operationId":"getSimpleStringType",
+            "responses":{
+               "200":{
+                  "description":"successful operation",
+                  "content":{
+                     "text/plain":{
+                     "schema":{
+                        "type":"string"
+                     	}
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/getSimpleInteger":{
+         "get":{
+            "operationId":"getSimpleIntegerType",
+            "responses":{
+               "200":{
+                  "description":"successful operation",
+                  "content":{
+                     "text/plain":{
+                     "schema":{
+                        "type":"integer"
+                     	}
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/getSimpleNumber":{
+         "get":{
+            "operationId":"getSimpleNumberType",
+            "responses":{
+               "200":{
+                  "description":"successful operation",
+                  "content":{
+                     "text/plain":{
+                     "schema":{
+                        "type":"number"
+                     	}
+                     }
+                  }
+               }
+            }
+         }
+      },
+      "/getSimpleBoolean":{
+         "get":{
+            "operationId":"getSimpleBooleanType",
+            "responses":{
+               "200":{
+                  "description":"successful operation",
+                  "content":{
+                     "text/plain":{
+                     "schema":{
+                        "type":"boolean"
+                     	}
+                     }
+                  }
+               }
+            }
+         }
+      },
       "/user/{username}":{
          "get":{
             "tags":[
