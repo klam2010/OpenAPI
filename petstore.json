@@ -212,13 +212,89 @@
             ],
             "summary":"Add a new pet to the store",
             "description":"Add a new pet to the store",
-            "operationId":"addPetNumbereType",
+            "operationId":"addPetNumberType",
             "requestBody":{
                "description":"Create a new pet in the store",
                "content":{
                   "text/plain":{
                      "schema":{
                         "type":"number"
+                     }
+                  }
+               },
+               "required":true
+            },
+            "responses":{
+               "200":{
+                  "description":"Successful operation"
+               },
+               "405":{
+                  "description":"Invalid input"
+               }
+            },
+            "security":[
+               {
+                  "petstore_auth":[
+                     "write:pets",
+                     "read:pets"
+                  ]
+               }
+            ]
+         }
+      },
+       
+      "/petSimpleIntegerSchema":{
+         "post":{
+            "tags":[
+               "pet"
+            ],
+            "summary":"Add a new pet to the store",
+            "description":"Add a new pet to the store",
+            "operationId":"addPetIntegerType",
+            "requestBody":{
+               "description":"Create a new pet in the store",
+               "content":{
+                  "text/plain":{
+                     "schema":{
+                        "type":"integer"
+                     }
+                  }
+               },
+               "required":true
+            },
+            "responses":{
+               "200":{
+                  "description":"Successful operation"
+               },
+               "405":{
+                  "description":"Invalid input"
+               }
+            },
+            "security":[
+               {
+                  "petstore_auth":[
+                     "write:pets",
+                     "read:pets"
+                  ]
+               }
+            ]
+         }
+      },
+       
+      "/petSimpleBooleanSchema":{
+         "post":{
+            "tags":[
+               "pet"
+            ],
+            "summary":"Add a new pet to the store",
+            "description":"Add a new pet to the store",
+            "operationId":"addPetBooleanType",
+            "requestBody":{
+               "description":"Create a new pet in the store",
+               "content":{
+                  "text/plain":{
+                     "schema":{
+                        "type":"boolean"
                      }
                   }
                },
