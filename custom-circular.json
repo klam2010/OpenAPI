@@ -1,31 +1,31 @@
 {
-  "openapi":"3.0.2",
-  "info":{
-    "title":"Circ-Ref Spec",
-    "termsOfService":"http://swagger.io/terms/",
-    "version":"1.0.5"
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Circ-Ref Spec",
+    "termsOfService": "http://swagger.io/terms/",
+    "version": "1.0.5"
   },
-  "paths":{
-    "/circRoot":{
-      "post":{
-        "requestBody":{
-          "content":{
-            "application/json":{
-              "schema":{
-                "$ref":"#/components/schemas/User"
+  "paths": {
+    "/circRoot": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
               }
             }
           },
-          "required":true
+          "required": true
         }
       }
     },
-    "/circObject":{
-      "post":{
-        "requestBody":{
-          "content":{
-            "application/json":{
-              "schema":{
+    "/circObject": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
                 "type": "object",
                 "properties": {
                   "start": {
@@ -35,7 +35,7 @@
               }
             }
           },
-          "required":true
+          "required": true
         }
       }
     },
@@ -99,8 +99,28 @@
               }
             }
           }
-        },
-        "required": true
+        }
+      }
+    },
+    "/circularComposedLoopArray": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "array": {
+                    "type": "array",
+                    "items": {
+                          "$ref": "#/components/schemas/User3"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/circularComposedMultiple": {
@@ -125,11 +145,9 @@
               }
             }
           }
-        },
-        "required": true
+        }
       }
     },
-
     "/circularComposedMultipleArray": {
       "post": {
         "requestBody": {
@@ -160,28 +178,28 @@
       }
     }
   },
-  "components":{
-    "schemas":{
-      "User":{
-        "type":"object",
-        "properties":{
-          "child":{
+  "components": {
+    "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "child": {
             "$ref": "#/components/schemas/User"
           }
         }
       },
-      "User2":{
-        "type":"object",
-        "properties":{
-          "child2":{
+      "User2": {
+        "type": "object",
+        "properties": {
+          "child2": {
             "$ref": "#/components/schemas/User2"
           }
         }
       },
-      "User3":{
-        "type":"object",
-        "properties":{
-          "childComposed":{
+      "User3": {
+        "type": "object",
+        "properties": {
+          "childComposed": {
             "anyOf": [
               {
                 "properties": {
