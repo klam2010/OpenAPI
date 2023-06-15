@@ -184,15 +184,16 @@
           "childComposed":{
             "anyOf": [
               {
+                "maxLength": 10,
+                "type": "string"
+              },
+              {
                 "$ref": "#/components/schemas/User"
               },
               {
-                "$ref": "#/components/schemas/User2"
+                "$ref": "#/components/schemas/User3"
               }
             ]
-          },
-          "loop": {
-            "$ref": "#/components/schemas/User3"
           }
         }
       }
