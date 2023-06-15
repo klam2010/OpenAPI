@@ -1,0 +1,164 @@
+{
+  "openapi":"3.0.2",
+  "info":{
+    "title":"Circ-Ref Spec",
+    "termsOfService":"http://swagger.io/terms/",
+    "version":"1.0.5"
+  },
+  "paths":{
+    "/circRoot":{
+      "post":{
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "$ref":"#/components/schemas/User"
+              }
+            }
+          },
+          "required":true
+        }
+      }
+    },
+    "/circObject":{
+      "post":{
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          },
+          "required":true
+        }
+      }
+    },
+    "/circObjectArray": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "array": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/User"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      }
+    },
+    "/circularComposedSingle": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/User"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      }
+    },
+    "/circularComposedMultiple": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/User"
+                      },
+                      {
+                        "$ref": "#/components/schemas/User2"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      }
+    },
+
+    "/circularComposedMultipleArray": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "array": {
+                    "type": "array",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/User"
+                        },
+                        {
+                          "$ref": "#/components/schemas/User2"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      }
+    }
+  },
+  "components":{
+    "schemas":{
+      "User":{
+        "type":"object",
+        "properties":{
+          "child":{
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "User2":{
+        "type":"object",
+        "properties":{
+          "child2":{
+            "$ref": "#/components/schemas/User2"
+          }
+        }
+      }
+    }
+  }
+}
