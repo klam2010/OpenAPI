@@ -184,8 +184,15 @@
           "childComposed":{
             "anyOf": [
               {
-                "maxLength": 10,
-                "type": "string"
+                "properties": {
+                  "field1": {
+                    "type": "string"
+                  },
+                  "field2": {
+                    "type": "string"
+                  }
+                },
+                "type": "object"
               },
               {
                 "$ref": "#/components/schemas/User"
