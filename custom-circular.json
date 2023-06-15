@@ -84,6 +84,25 @@
         "required": true
       }
     },
+    "/circularComposedLoop": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "$ref": "#/components/schemas/User3"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": true
+      }
+    },
     "/circularComposedMultiple": {
       "post": {
         "requestBody": {
@@ -156,6 +175,24 @@
         "properties":{
           "child2":{
             "$ref": "#/components/schemas/User2"
+          }
+        }
+      },
+      "User3":{
+        "type":"object",
+        "properties":{
+          "childComposed":{
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/User"
+              },
+              {
+                "$ref": "#/components/schemas/User2"
+              }
+            ]
+          },
+          "loop": {
+            "$ref": "#/components/schemas/User3"
           }
         }
       }
