@@ -1,0 +1,837 @@
+{
+  "spec": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Adoption Database",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "/"
+      }
+    ],
+    "paths": {
+      "/api/v1/adoptionlabel": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get published Adoption Label list.",
+          "operationId": "get_adoption_lable",
+          "responses": {
+            "200": {
+              "description": "Returns adoption lables"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/adoptionlist": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get adoption list.",
+          "operationId": "get_adoption_list",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set items per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "sortBy",
+              "in": "query",
+              "description": "The field used to set sort field. id/stateName/countyName/jurisdictionName/townshipName/bookTitleYear",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "direction",
+              "in": "query",
+              "description": "The field used to set sort direction desc/asc.",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns adoption list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/adoptions/township": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get township adoption list.",
+          "operationId": "get_adoption_township",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fTownship",
+              "in": "query",
+              "description": "The field used to set township id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fCodeYear",
+              "in": "query",
+              "description": "The field used to set code year id",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fStatus",
+              "in": "query",
+              "description": "The field used to set status id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fBook",
+              "in": "query",
+              "description": "The field used to set book id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fAdoptionLabel",
+              "in": "query",
+              "description": "The field used to set adoption label id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns township adoptions"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/adoptions/jurisdiction": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get jurisdiction adoption list.",
+          "operationId": "get_adoption_jurisdiction",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fJurisdiction",
+              "in": "query",
+              "description": "The field used to set jurisdiction id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fCodeYear",
+              "in": "query",
+              "description": "The field used to set code year id",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fStatus",
+              "in": "query",
+              "description": "The field used to set status id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fBook",
+              "in": "query",
+              "description": "The field used to set book id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fAdoptionLabel",
+              "in": "query",
+              "description": "The field used to set adoption label id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns jurisdiction adoptions"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/adoptions/county": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get county adoption list.",
+          "operationId": "get_adoption_county",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fCounty",
+              "in": "query",
+              "description": "The field used to set county id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fCodeYear",
+              "in": "query",
+              "description": "The field used to set code year id",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fStatus",
+              "in": "query",
+              "description": "The field used to set status id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fBook",
+              "in": "query",
+              "description": "The field used to set book id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fAdoptionLabel",
+              "in": "query",
+              "description": "The field used to set adoption label id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns county adoptions"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/adoptions/state": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Get state adoption list.",
+          "operationId": "get_adoption_state",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fState",
+              "in": "query",
+              "description": "The field used to set state id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fCodeYear",
+              "in": "query",
+              "description": "The field used to set code year id",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fStatus",
+              "in": "query",
+              "description": "The field used to set status id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fBook",
+              "in": "query",
+              "description": "The field used to set book id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fAdoptionLabel",
+              "in": "query",
+              "description": "The field used to set adoption label id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns state adoptions"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/codebooks": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get all published Code Book list.",
+          "operationId": "get_master_codebook",
+          "responses": {
+            "default": {
+              "description": ""
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/codeyears": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get published CodeYear list.",
+          "operationId": "get_master_year",
+          "responses": {
+            "200": {
+              "description": "return the code years."
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/countries": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get all country list.",
+          "operationId": "get_master_country",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "description": "The field used to set id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "name",
+              "in": "query",
+              "description": "The field used to set name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "isAdoptionAvailable",
+              "in": "query",
+              "description": "The field used to set adoption available or not i.e. Yes/No",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns country list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/country/adoption": {
+        "get": {
+          "tags": [
+            "Adoption"
+          ],
+          "summary": "Country Adoption.",
+          "operationId": "get_adoption_country",
+          "parameters": [
+            {
+              "name": "countryId",
+              "in": "query",
+              "description": "The field used to set country id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "countryName",
+              "in": "query",
+              "description": "The field used to set country name",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns county adoption"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/counties": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get all published county list.",
+          "operationId": "get_master_county",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "description": "The field used to set id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "name",
+              "in": "query",
+              "description": "The field used to set name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "sId",
+              "in": "query",
+              "description": "The field used to set state id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "cId",
+              "in": "query",
+              "description": "The field used to set country id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns county list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/locations": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Search state, county and jurisdiction.",
+          "operationId": "get_master_locations",
+          "parameters": [
+            {
+              "name": "searchString",
+              "in": "query",
+              "description": "Required parameter and minimum length should be 3 characters. It will match with the name of the entity",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Search endpoint which takes a string (partial or full) and returns matches from any of the available location types (country, state, county, township or jurisdiction)"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/jurisdictions": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get Jurisdiction list pagination.",
+          "operationId": "get_master_jurisdiction",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fJurisdiction",
+              "in": "query",
+              "description": "The field used to set jurisdiction id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fName",
+              "in": "query",
+              "description": "The field used to set jurisdiction name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fCountry",
+              "in": "query",
+              "description": "The field used to set country id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fState",
+              "in": "query",
+              "description": "The field used to set state id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "sortBy",
+              "in": "query",
+              "description": "The field used to sort i.e. name/id/statusText",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "direction",
+              "in": "query",
+              "description": "The field used to set sort order desc/asc",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns jurisdiction list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/states": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get all published state list.",
+          "operationId": "get_master_state",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "query",
+              "description": "The field used to set id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "name",
+              "in": "query",
+              "description": "The field used to set name.",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "cId",
+              "in": "query",
+              "description": "The field used to set country id",
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns state list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      },
+      "/api/v1/townships": {
+        "get": {
+          "tags": [
+            "Master API"
+          ],
+          "summary": "Get published township list.",
+          "operationId": "get_master_township",
+          "parameters": [
+            {
+              "name": "page",
+              "in": "query",
+              "description": "The field used to set page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "itemsPerPage",
+              "in": "query",
+              "description": "The field used to set item per page",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fTownship",
+              "in": "query",
+              "description": "The field used to set township id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fName",
+              "in": "query",
+              "description": "The field used to set township name",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "fCountry",
+              "in": "query",
+              "description": "The field used to set country id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "fState",
+              "in": "query",
+              "description": "The field used to set state id",
+              "schema": {
+                "type": "integer"
+              }
+            },
+            {
+              "name": "sortBy",
+              "in": "query",
+              "description": "The field used to sort i.e. name/id/statusText",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "direction",
+              "in": "query",
+              "description": "The field used to set sort order desc/asc",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Returns jurisdiction list"
+            }
+          },
+          "security": [
+            {
+              "Bearer": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "Bearer": {
+          "type": "http",
+          "bearerFormat": "JWT",
+          "scheme": "bearer"
+        }
+      }
+    },
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "tags": [
+      {
+        "name": "Adoption",
+        "description": "Adoption endpoints"
+      },
+      {
+        "name": "Master API",
+        "description": "Master data endpoints"
+      }
+    ]
+  }
+}
